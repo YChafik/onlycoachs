@@ -1,5 +1,10 @@
 import React, { ReactNode } from "react";
 
-export const Heading: React.FC<{ children: ReactNode }> = ({ children }) => {
-  return <h1 className="font-Lato text-6xl">{children}</h1>;
+export type HeadingProps = {
+  children?: ReactNode;
+  size?: "6xl" | "7xl" | "8xl" | "9xl";
 };
+
+export const Heading: React.FC<HeadingProps> = ({ size, children }) => (
+  <h1 className={size ? "text-" + size : "text-6xl"}>{children}</h1>
+);

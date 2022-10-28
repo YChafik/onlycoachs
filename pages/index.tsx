@@ -16,7 +16,7 @@ export default function Home() {
         <h1 className={styles.title}>
           Welcome to <a href="https://nextjs.org">Next.js!</a>
         </h1>
-        <Heading>
+        <Heading size={"7xl"}>
           Welcome to <a href="https://nextjs.org">Next.js!</a>
         </Heading>
 
