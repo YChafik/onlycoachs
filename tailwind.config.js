@@ -5,7 +5,12 @@ module.exports = {
     "./components/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        Lato: ["Lato", "sans-serif"],
+        Oswald: ["Oswald", "sans-serif"],
+      },
+    },
   },
   plugins: [],
 };
