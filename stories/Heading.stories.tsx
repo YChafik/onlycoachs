@@ -13,12 +13,17 @@ const Template: ComponentStory<typeof Heading> = (args) => (
   <Heading {...args}> Welcome to OnlyCoachs</Heading>
 );
 
-export const Primary = Template.bind({});
-Primary.args = {
-  size: "6xl",
+export const Big = Template.bind({});
+Big.args = {
+  size: "text-6xl",
+};
+
+export const Medium = Template.bind({});
+Medium.args = {
+  size: "text-3xl",
 };
 
 export const Small = Template.bind({});
 Small.args = {
-  size: "8xl",
+  size: "text-xl",
 };
