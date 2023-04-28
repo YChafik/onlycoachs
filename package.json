@@ -1,0 +1,12 @@
+{
+  "name": "serverless",
+  "version": "1.0.0",
+  "main": "index.ts",
+  "author": "Yass <chafik.yassine@gmail.com>",
+  "license": "MIT",
+  "private": true,
+  "workspaces": [
+    "web",
+    "api"
+  ]
+}
