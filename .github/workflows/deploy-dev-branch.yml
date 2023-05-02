@@ -34,3 +34,6 @@ jobs:
 
       - name: Install dependencies 📦
         run: yarn install
+
+      - name: Build api 📦
+        run: yarn api start
