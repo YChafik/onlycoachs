@@ -39,4 +39,4 @@ jobs:
         run: serverless -v
 
       - name: Deploy 🚀
-        run: serverless deploy --org ${{ secrets.SERVERLESS_ORG_NAME }} --verbose --stage dev --package sls-package-output --region eu-west-3
+        run: cd api && serverless deploy --org ${{ secrets.SERVERLESS_ORG_NAME }} --verbose --stage dev --package sls-package-output --region eu-west-3
