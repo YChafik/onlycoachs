@@ -1,12 +1,19 @@
 {
+  "author": "Yass <chafik.yassine@gmail.com>",
   "name": "serverless",
   "version": "1.0.0",
-  "main": "index.ts",
-  "author": "Yass <chafik.yassine@gmail.com>",
   "license": "MIT",
   "private": true,
   "workspaces": [
-    "web",
-    "api"
-  ]
+    "api",
+    "web"
+  ],
+  "scripts": {
+    "api": "yarn workspace api",
+    "start": "yarn api start"
+  },
+  "devDependencies": {
+    "lerna": "^6.6.1"
+  },
+  "packageManager": "yarn@3.5.0"
 }
