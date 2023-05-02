@@ -35,8 +35,5 @@ jobs:
       - name: Install dependencies 📦
         run: yarn install
 
-      - name: Serverless version 📦
-        run: serverless -v
-
       - name: Deploy 🚀
         run: cd api && serverless deploy --org ${{ secrets.SERVERLESS_ORG_NAME }} --verbose --stage dev --package sls-package-output --region eu-west-3
