@@ -39,4 +39,4 @@ jobs:
         run: serverless -v
 
       - name: Deploy 🚀
-        run: serverless deploy --verbose --stage develop --package sls-package-output --region eu-west-3
+        run: serverless deploy --verbose --stage dev --package sls-package-output --region eu-west-3
