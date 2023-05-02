@@ -20,6 +20,9 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
 
+      - name: Log env
+        run: env
+
       - name: Configure AWS credentials 🔑
         uses: aws-actions/configure-aws-credentials@v1
         with:
