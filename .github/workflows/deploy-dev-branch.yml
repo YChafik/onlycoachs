@@ -25,14 +25,17 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
 
+      - name: Go to directory
+        run: cd api
+
       - name: Install Serverless Framework 📦
         run: npm install -g serverless
-
-      - name: Serverless AWS authentication 🔑
-        run: sls config credentials --provider aws --key ${{ secrets.AWS_ACCESS_KEY_ID }} --secret ${{ secrets.AWS_SECRET_ACCESS_KEY }}
 
       - name: Install dependencies 📦
         run: yarn install
 
+      - name: Serverless AWS authentication 🔑
+        run: sls config credentials --provider aws --key ${{ secrets.AWS_ACCESS_KEY_ID }} --secret ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+
       - name: Deploy 🚀
-        run: cd api && serverless deploy --org ${{ secrets.SERVERLESS_ORG_NAME }} --verbose --stage dev --region eu-west-3
+        run: sls deploy --org ${{ secrets.SERVERLESS_ORG_NAME }} --verbose --stage dev --package sls-package-output --region eu-west-3
