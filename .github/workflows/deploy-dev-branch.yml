@@ -35,7 +35,7 @@ jobs:
         run: yarn install
 
       - name: Serverless AWS authentication 🔑
-        run: sls config credentials --provider aws --key ${{ secrets.AWS_ACCESS_KEY_ID }} --secret ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+        run: cd api && sls config credentials --provider aws --key ${{ secrets.AWS_ACCESS_KEY_ID }} --secret ${{ secrets.AWS_SECRET_ACCESS_KEY }}
 
       - name: Deploy 🚀
-        run: sls deploy --org ${{ secrets.SERVERLESS_ORG_NAME }} --verbose --stage dev --package sls-package-output --region eu-west-3
+        run: cd api && sls deploy --org ${{ secrets.SERVERLESS_ORG_NAME }} --verbose --stage dev --package sls-package-output --region eu-west-3
