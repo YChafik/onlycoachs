@@ -6,7 +6,6 @@ on:
   push:
     branches:
       - dev
-      - feature/github-action-deployment
 
 jobs:
   deploy:
