@@ -1,6 +1,6 @@
-name: Deply dev branch
+name: Deploy dev branch 🚀
 
-run-name: ${{ github.actor }} is deploying to dev
+run-name: ${{ github.actor }} is deploying to dev 🚀
 
 on:
   push:
