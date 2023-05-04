@@ -25,7 +25,7 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
 
-      - run: npm install && npm ci
+      - run: yarn install --frozen-lockfile
 
       - name: serverless deploy 🚀
         uses: serverless/github-action@v3.2
