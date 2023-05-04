@@ -20,20 +20,19 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
 
-      - name: Configure AWS credentials 🔑
-        uses: aws-actions/configure-aws-credentials@v1
-        with:
-          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
-          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          aws-region: ${{ secrets.AWS_REGION }}
-
       - name: Use Node.js ${{ matrix.node-version }} ⚙️
         uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.node-version }}
 
+      - name: Install Serverless Framework 📦
+        run: npm install -g serverless
+
+      - name: Serverless AWS authentication 🔑
+        run: sls config credentials --provider aws --key ${{ secrets.AWS_ACCESS_KEY_ID }} --secret ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+
       - name: Install dependencies 📦
         run: yarn install
 
       - name: Deploy 🚀
-        run: cd api && serverless deploy --org ${{ secrets.SERVERLESS_ORG_NAME }} --verbose --stage dev --package sls-package-output --region eu-west-3
+        run: cd api && serverless deploy -s dev --org ${{ secrets.SERVERLESS_ORG_NAME }} --verbose --stage dev --package sls-package-output --region eu-west-3
