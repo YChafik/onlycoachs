@@ -1,6 +1,6 @@
-name: Deply dev branch
+name: Deploy dev branch 🚀
 
-run-name: ${{ github.actor }} is deploying to dev
+run-name: ${{ github.actor }} is deploying to dev 🚀
 
 on:
   push:
@@ -35,4 +35,4 @@ jobs:
         run: yarn install
 
       - name: Deploy 🚀
-        run: cd api && serverless deploy -s dev --org ${{ secrets.SERVERLESS_ORG_NAME }} --verbose --stage dev --package sls-package-output --region eu-west-3
+        run: cd api && serverless deploy --org ${{ secrets.SERVERLESS_ORG_NAME }} --verbose --stage dev --package sls-package-output --region eu-west-3
