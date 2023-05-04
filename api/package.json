@@ -18,6 +18,7 @@
   "type": "module",
   "scripts": {
     "compile": "tsc",
-    "start": "yarn compile && node ./dist/src/index.js"
+    "start": "yarn compile && node ./dist/src/index.js",
+    "deploy": "serverless deploy --verbose --stage develop --package sls-package-output --region eu-west-3"
   }
 }
