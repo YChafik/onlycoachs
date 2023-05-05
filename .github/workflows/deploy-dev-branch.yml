@@ -27,7 +27,7 @@ jobs:
 
       - run: yarn
 
-      - run: npm install -g serverless 📦
+      - run: npm install -g serverless
 
       - name: Serverless configuration 🧰
         run: serverless config credentials \
