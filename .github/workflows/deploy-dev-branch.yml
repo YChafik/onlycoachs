@@ -25,23 +25,12 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
 
-      - run: yarn
-
-      - run: npm install -g serverless
-
-      - name: Serverless configuration 🧰
-        run: cd ./api && serverless config credentials \
-          --provider aws \
-          --key ${{ secrets.AWS_ACCESS_KEY_ID }} \
-          --secret ${{ secrets.AWS_SECRET_ACCESS_KEY }} \
-          --profile serverless-user
-
       - name: serverless deploy 🚀
-        uses: serverless/github-action@v3.2
+        uses: serverless/github-action@master
         with:
-          args: -c "cd ./api && serverless deploy --stage dev region eu-west-3"
+          args: deploy
         env:
-          SERVERLESS_ACCESS_KEY: ${{ secrets.SERVERLESS_ACCESS_KEY }}
-        # or if using AWS credentials directly
-        # AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
-        # AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          # SERVERLESS_ACCESS_KEY: ${{ secrets.SERVERLESS_ACCESS_KEY }}
+          # or if using AWS credentials directly
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
