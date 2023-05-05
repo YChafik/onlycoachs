@@ -4,10 +4,11 @@
   "version": "1.0.0",
   "license": "MIT",
   "private": true,
-  "workspaces": [
-    "api",
-    "web"
-  ],
+  "workspaces": {
+    "packages": [
+      "services/*"
+    ]
+  },
   "scripts": {
     "api": "yarn workspace api",
     "start": "yarn api start"
