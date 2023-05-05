@@ -1,0 +1,30 @@
+# org: chafikyassine
+app: onlycoachs
+service: onlycoachs-api
+frameworkVersion: "3"
+
+provider:
+  name: aws
+  runtime: nodejs18.x
+  region: ${opt:region, 'eu-west-3'}
+  stage: ${opt:stage, 'dev'}
+  memorySize: 512
+  timeout: 6
+  logRetentionInDays: 7
+
+plugins:
+  - serverless-plugin-typescript
+
+functions:
+  hello:
+    handler: handler.hello
+    events:
+      - httpApi:
+          path: /
+          method: get
+  graphql:
+    handler: handler.graphql
+    events:
+      - httpApi:
+          path: /graphql
+          method: post
