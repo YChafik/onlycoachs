@@ -1,0 +1,9 @@
+{
+  "name": "web",
+  "version": "1.0.0",
+  "licence": "MIT",
+  "dependencies": {
+    "api": "1.0.0",
+    "cross-env": "5.0.5"
+  }
+}

@@ -1,0 +1,5 @@
+services:
+  api:
+    path: services/api
+  web:
+    path: services/web
