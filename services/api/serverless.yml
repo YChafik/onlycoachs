@@ -12,8 +12,19 @@ provider:
   timeout: 6
   logRetentionInDays: 7
 
+  apiGateway:
+    shouldStartNameWithService: true # for upcoming Serverless v3
+
 plugins:
   - serverless-plugin-typescript
+  - serverless-offline
+
+custom:
+  serverless-offline:
+    useChildProcesses: true
+    noPrependStageInUrl: true
+    httpPort: 9000
+    lambdaPort: 9002
 
 functions:
   hello:
