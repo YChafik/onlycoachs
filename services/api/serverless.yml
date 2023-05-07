@@ -1,4 +1,4 @@
-# org: chafikyassine
+org: chafikyassine
 app: onlycoachs
 service: onlycoachs-api
 frameworkVersion: "3"
