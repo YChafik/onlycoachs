@@ -47,11 +47,11 @@ functions:
     # Any web request regardless of path or method will be handled by a single Lambda function
     handler: handler.serve
     events:
-      - httpApi:
+      - http:
           path: /
           method: any
           cors: true
-      - httpApi:
+      - http:
           path: /{any+}
           method: any
           cors: true
@@ -105,11 +105,11 @@ custom:
 resources:
   Resources:
     # Customize the API Gateway resource
-    ApiGatewayRestApi:
-      Type: AWS::ApiGateway::RestApi
-      Properties:
-        # Enable gzip compression
-        MinimumCompressionSize: 1000
+    # ApiGatewayRestApi:
+    #   Type: AWS::ApiGateway::RestApi
+    #   Properties:
+    #     # Enable gzip compression
+    #     MinimumCompressionSize: 1000
 
     # S3 Bucket for the distribution bundles
     DistBucket:
