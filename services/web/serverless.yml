@@ -105,11 +105,11 @@ custom:
 resources:
   Resources:
     # Customize the API Gateway resource
-    # ApiGatewayRestApi:
-    #   Type: AWS::ApiGateway::RestApi
-    #   Properties:
-    #     # Enable gzip compression
-    #     MinimumCompressionSize: 1000
+    ApiGatewayRestApi:
+      Type: AWS::ApiGateway::RestApi
+      Properties:
+        # Enable gzip compression
+        MinimumCompressionSize: 1000
 
     # S3 Bucket for the distribution bundles
     DistBucket:
