@@ -47,11 +47,11 @@ functions:
     # Any web request regardless of path or method will be handled by a single Lambda function
     handler: handler.serve
     events:
-      - http:
+      - httpApi:
           path: /
           method: any
           cors: true
-      - http:
+      - httpApi:
           path: /{any+}
           method: any
           cors: true
