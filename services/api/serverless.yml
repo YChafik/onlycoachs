@@ -20,7 +20,7 @@ plugins:
 
 custom:
   serverless-offline:
-    useChildProcesses: true
+    #useChildProcesses: true
     noPrependStageInUrl: true
     httpPort: 9000
     lambdaPort: 9002

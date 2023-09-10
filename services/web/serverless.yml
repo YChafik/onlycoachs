@@ -97,7 +97,7 @@ custom:
               - "**/*"
 
   serverless-offline:
-    useChildProcesses: true
+    # useChildProcesses: true
     noPrependStageInUrl: true
     httpPort: 3000
     lambdaPort: 3002
