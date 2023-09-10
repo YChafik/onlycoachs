@@ -37,7 +37,6 @@ provider:
           - ${self:provider.stage}
 
 plugins:
-  - serverless-webpack
   - serverless-plugin-typescript
   - serverless-offline
   - serverless-s3-deploy
@@ -78,9 +77,6 @@ custom:
       # Build the client-side script before packaging backend code
       package:initialize: "npm run build:browser"
       deploy:finalize: "npx sls s3deploy --stage ${self:provider.stage}"
-
-  webpack:
-    webpackConfig: "webpack.server.config.js"
 
   assets:
     # Automatically copy distribution folder to S3 stopped working; do it manually (see `scripts.hooks.deploy:finalize`)
