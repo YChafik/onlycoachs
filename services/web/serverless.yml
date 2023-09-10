@@ -20,7 +20,7 @@ plugins:
   - serverless-s3-sync
 
 custom:
-  nsDomain: ${env:ONLYCOACHS_NS_DOMAIN, 'web.onlycoachs.fr'}
+  nsDomain: ${env:ONLYCOACHS_WEB_NS_DOMAIN, 'web.onlycoachs.fr'}
   domainPrefixes:
     develop: "dev."
     staging: "staging."
