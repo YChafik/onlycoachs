@@ -38,7 +38,7 @@ provider:
 
 plugins:
   - serverless-webpack
-  - serverless-plugin-scripts
+  - serverless-plugin-typescript
   - serverless-offline
   - serverless-s3-deploy
 
