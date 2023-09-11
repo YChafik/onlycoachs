@@ -34,4 +34,5 @@ jobs:
           # or if using AWS credentials directly
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          ONLYCOACHS_WEB_NS_DOMAIN: ${{ secrets.ONLYCOACHS_WEB_NS_DOMAIN}}
+          ONLYCOACHS_WEB_NS_DOMAIN: ${{ secrets.ONLYCOACHS_WEB_NS_DOMAIN }}
+          STAGE: ${{ env.STAGE }}
