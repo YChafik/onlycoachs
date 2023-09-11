@@ -11,7 +11,7 @@ provider:
   name: aws
   runtime: nodejs18.x
   region: ${aws:region, 'eu-west-3'}
-  stage: ${aws:stage, 'dev'}
+  stage: ${env:stage, 'dev'}
   memorySize: 512
   timeout: 6
   logRetentionInDays: 7
